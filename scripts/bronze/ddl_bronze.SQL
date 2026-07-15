@@ -51,7 +51,7 @@ CREATE TABLE bronze.crm_sales_details (
   sls_due_dt INT,
   sls_sales INT,
   sls_quantity INT,
-  sls_price INT,
+  sls_price INT
 );
 GO
 
@@ -72,7 +72,7 @@ GO
 CREATE TABLE bronze.erp_cust_az12 (
   cid NVARCHAR(50),
   bdate DATE,
-  gen NVARCHAR(50),
+  gen NVARCHAR(50)
 );
 GO
 
