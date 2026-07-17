@@ -3,10 +3,12 @@
 Stored Procedure: Laad Silver Layer (Source -> Silver)
 =====================================================================================================
 Script Doel:
-  Deze stored procedure laadt gegevens in het 'silver' schema vanuit bronze tabellen.
+	Deze stored procedure voert het ETL-proces (Extract, Transform, Load) uit om de tabellen 
+  	van het 'silver'-schema te vullen met gegevens uit het 'bronze'-schema.
   De procedure voert de volgende acties uit:
   - De silver-tabellen worden leeggehaald voordat de gegevens worden geladen.
-  - De `INSERT INTO`-opdracht wordt gebruikt om aangepaste gegevens vanuit de bronze tabellen in de silver-tabellen te laden.
+  - De getransformeerde en opgeschoonde gegevens van het 'bronze'-schema in de tabellen van het 'silver'-schema invoegen.
+
 Parameters:
   Geen.
   Deze stored procedure accepteert geen parameters en retourneert geen waarden.
