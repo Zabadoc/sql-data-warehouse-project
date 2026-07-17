@@ -29,10 +29,10 @@ BEGIN
 		PRINT 'Loading CRM Tables';
 		PRINT '---------------------------------------------------------';
 
+		-- Loading bronze.crm_cust_info
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.crm_cust_info';
 		TRUNCATE TABLE bronze.crm_cust_info;
-
 		PRINT '>> Insterting Data into: bronze.crm_cust_info';
 		BULK INSERT bronze.crm_cust_info
 		FROM 'C:\10 Leren programmeren\Visual Studio\SQL FULL COURSE FOR BEGINNERS\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
@@ -44,11 +44,11 @@ BEGIN
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> -------------';
-
+		
+		-- Loading bronze.crm_prd_info
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.crm_prd_info';
 		TRUNCATE TABLE bronze.crm_prd_info;
-
 		PRINT '>> Insterting Data into: bronze.crm_prd_info';
 		BULK INSERT bronze.crm_prd_info
 		FROM 'C:\10 Leren programmeren\Visual Studio\SQL FULL COURSE FOR BEGINNERS\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
@@ -61,10 +61,10 @@ BEGIN
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> -------------';
 
+		-- Loading bronze.crm_sales_details
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.crm_sales_details';
 		TRUNCATE TABLE bronze.crm_sales_details;
-
 		PRINT '>> Insterting Data into: bronze.crm_sales_details';
 		BULK INSERT bronze.crm_sales_details
 		FROM 'C:\10 Leren programmeren\Visual Studio\SQL FULL COURSE FOR BEGINNERS\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
@@ -81,10 +81,10 @@ BEGIN
 		PRINT 'Loading ERP Tables';
 		PRINT '---------------------------------------------------------';
 
+		-- Loading bronze.erp_cust_az12
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_loc_a101';
 		TRUNCATE TABLE bronze.erp_loc_a101;
-
 		PRINT '>> Insterting Data into: bronze.erp_loc_a101';
 		BULK INSERT bronze.erp_loc_a101
 		FROM 'C:\10 Leren programmeren\Visual Studio\SQL FULL COURSE FOR BEGINNERS\sql-data-warehouse-project\datasets\source_erp\loc_a101.csv'
@@ -97,10 +97,10 @@ BEGIN
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> -------------';
 
+		-- Loading bronze.erp_loc_a101
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_cust_az12';
 		TRUNCATE TABLE bronze.erp_cust_az12;
-
 		PRINT '>> Insterting Data into: bronze.erp_cust_az12';
 		BULK INSERT bronze.erp_cust_az12
 		FROM 'C:\10 Leren programmeren\Visual Studio\SQL FULL COURSE FOR BEGINNERS\sql-data-warehouse-project\datasets\source_erp\cust_az12.csv'
@@ -113,10 +113,10 @@ BEGIN
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> -------------';
 
+		-- Loading bronze.erp_px_cat_g1v2
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_cat_g1v2';
 		TRUNCATE TABLE bronze.erp_px_cat_g1v2;
-
 		PRINT '>> Insterting Data into: bronze.erp_cat_g1v2';
 		BULK INSERT bronze.erp_px_cat_g1v2
 		FROM 'C:\10 Leren programmeren\Visual Studio\SQL FULL COURSE FOR BEGINNERS\sql-data-warehouse-project\datasets\source_erp\px_cat_g1v2.csv'
@@ -144,3 +144,4 @@ BEGIN
 		PRINT '=========================================================';
 	END CATCH
 END
+
