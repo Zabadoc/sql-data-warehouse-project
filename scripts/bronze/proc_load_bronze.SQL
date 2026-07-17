@@ -3,7 +3,7 @@
 Stored Procedure: Laad Bronze Layer (Source -> Bronze)
 =====================================================================================================
 Script Doel:
-  Deze stored procedure laadt gegevens in het 'bronze' schema vanuit externe CSV-bestanden.
+	Deze stored procedure laadt gegevens in het 'bronze' schema vanuit externe CSV-bestanden.
   De procedure voert de volgende acties uit:
   - De bronze-tabellen worden leeggehaald voordat de gegevens worden geladen.
   - De `BULK INSERT`-opdracht wordt gebruikt om gegevens vanuit CSV-bestanden in de bronze-tabellen te laden.
